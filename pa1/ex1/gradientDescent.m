@@ -18,9 +18,6 @@ for iter = 1:num_iters
     %
              
 
-    t1 = theta(1);
-    t2 = theta(2);
-
     % sum((y - (X * theta)) .^2) / (2 * m);
     theta = [theta(1) - (alpha .* (sum((X *theta ) - y) / m));
              theta(2) - (alpha .* (sum(((X *theta) - y) .* X(:, 2)) / m))];

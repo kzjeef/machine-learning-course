@@ -16,19 +16,16 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
+  n = size(X, 2);
+  sigma = zeros(n, 1);
+  % update sigma vector.
 
+  % the (**y**)' * X act as the Sigma in the formular.
+  sigma =  ((((X * theta) - y)' * X) / m)';
 
-
-
-
-
-
-
-
-
-
-    % ============================================================
-
+  theta = theta - (alpha .* sigma);
+  % ============================================================
+  
     % Save the cost J in every iteration    
     J_history(iter) = computeCostMulti(X, y, theta);
 
